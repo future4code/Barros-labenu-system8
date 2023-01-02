@@ -1,4 +1,7 @@
 import knex from "knex";
+import dotenv from "dotenv";
+
+dotenv.config();
 // estabelecer a conexão com o banco 
 
 export const connection = knex({
