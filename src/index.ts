@@ -1,5 +1,4 @@
 import express from "express"
-
 import cors from 'cors'
 import { createClass } from "./endpoints/createClass"
 import { updateModule } from "./endpoints/updateModule"

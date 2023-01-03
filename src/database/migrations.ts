@@ -59,4 +59,7 @@ const createTables = async () => {
     }
 }
 
+const closeConnection = () => { connection.destroy() }
+
 createTables()
+   .finally(closeConnection)
