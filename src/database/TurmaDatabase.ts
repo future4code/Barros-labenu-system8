@@ -16,6 +16,10 @@ export class TurmaDatabase extends BaseDatabase {
         `)
     }
 
+    // public async getById(id: string) {
+    //     return super.getById(id)
+    //   }
+
     public async getActiveClass(){
         await BaseDatabase.connection.raw(`
             SELECT * FROM ${this.TABLE_NAME} WHERE Turma.modulo > 0

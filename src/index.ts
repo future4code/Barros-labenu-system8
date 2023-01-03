@@ -2,6 +2,7 @@ import express from "express"
 
 import cors from 'cors'
 import { createClass } from "./endpoints/createClass"
+import { updateModule } from "./endpoints/updateModule"
 
 const app = express()
 
@@ -14,3 +15,6 @@ app.listen(3003, () => {
 });
 
 app.post("/turma", createClass)
+
+
+app.put("/turma", updateModule)

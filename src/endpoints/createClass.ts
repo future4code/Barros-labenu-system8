@@ -7,6 +7,9 @@ import { generateId } from "../functions/generateId"
 export const createClass= async (req:Request, res:Response) => {
     let errorCode = 400
     let result
+    const dataBase = new TurmaDatabase()
+    const getById = await dataBase.getById("ctoaHQFtFBwUQ69lRlJrQmxS6qnBNg")
+    console.log(getById);
     try {
         const { nome, modulo } = req.body
         if (!nome) {
