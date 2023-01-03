@@ -8,6 +8,11 @@ export class TurmaDatabase extends BaseDatabase {
         await super.create(turma)
     }
 
+    public async getAll() {
+        return super.getAll()
+        
+    }
+
     public async changeModule(id:string, update:number){
         await BaseDatabase.connection.raw(`
             UPDATE ${this.TABLE_NAME}
@@ -15,10 +20,6 @@ export class TurmaDatabase extends BaseDatabase {
             WHERE id = "${id}"
         `)
     }
-
-    // public async getById(id: string) {
-    //     return super.getById(id)
-    //   }
 
     public async getActiveClass(){
         await BaseDatabase.connection.raw(`

@@ -18,6 +18,12 @@ export abstract class BaseDatabase {
 
     abstract TABLE_NAME : string
 
+
+    public async getAll(){
+        const result = await BaseDatabase.connection(this.TABLE_NAME).select();
+        return result
+    }
+
     public async create(item: any) {
         await BaseDatabase.connection(this.TABLE_NAME).insert(item);
     }
@@ -30,10 +36,10 @@ export abstract class BaseDatabase {
         return result
     }
 
-    public async putItem(id:string, update:any, item:any) {
-        let result = this.getById(id)
-        await BaseDatabase.connection(this.TABLE_NAME)
+    // public async putItem(id:string, update:any, item:any) {
+    //     let result = this.getById(id)
+    //     await BaseDatabase.connection(this.TABLE_NAME)
         
-    }
+    // }
 
     }

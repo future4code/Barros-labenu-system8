@@ -2,6 +2,7 @@ import express from "express"
 import cors from 'cors'
 import { createClass } from "./endpoints/createClass"
 import { updateModule } from "./endpoints/updateModule"
+import { getAllClasses } from "./endpoints/getAllClasses"
 
 const app = express()
 
@@ -13,7 +14,12 @@ app.listen(3003, () => {
     console.log("Server is running in http://localhost:3003");
 });
 
+
+
+
+app.get("/turma", getAllClasses)
+
 app.post("/turma", createClass)
 
-
 app.put("/turma", updateModule)
+
