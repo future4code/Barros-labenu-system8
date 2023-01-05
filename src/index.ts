@@ -3,6 +3,7 @@ import cors from 'cors'
 import { createClass } from "./endpoints/createClass"
 import { updateModule } from "./endpoints/updateModule"
 import { getAllClasses } from "./endpoints/getAllClasses"
+import { createNewStudent } from "./endpoints/createNewStudent"
 
 const app = express()
 
@@ -22,4 +23,6 @@ app.get("/turma", getAllClasses)
 app.post("/turma", createClass)
 
 app.put("/turma", updateModule)
+
+app.post("/estudante", createNewStudent)
 
