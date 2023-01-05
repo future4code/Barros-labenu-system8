@@ -35,6 +35,13 @@ export abstract class BaseDatabase {
 
         return result
     }
+    public async getByName(name:string) {
+        let result = await BaseDatabase.connection(this.TABLE_NAME)
+        .select()
+        .where({name})
+
+        return result
+    }
 
     // public async putItem(id:string, update:any, item:any) {
     //     let result = this.getById(id)

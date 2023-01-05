@@ -6,4 +6,8 @@ export class EstudanteDatabase extends BaseDatabase {
     public async create(item:any) {
         await super.create(item)
     }
+
+    public async getByName(name: string) {
+        return await super.getByName(name)
+    }
 }

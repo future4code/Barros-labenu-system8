@@ -4,6 +4,7 @@ import { createClass } from "./endpoints/createClass"
 import { updateModule } from "./endpoints/updateModule"
 import { getAllClasses } from "./endpoints/getAllClasses"
 import { createNewStudent } from "./endpoints/createNewStudent"
+import { getAllStudents } from "./endpoints/getAllStudents"
 
 const app = express()
 
@@ -19,6 +20,8 @@ app.listen(3003, () => {
 
 
 app.get("/turma", getAllClasses)
+
+app.get("/estudante", getAllStudents)
 
 app.post("/turma", createClass)
 
