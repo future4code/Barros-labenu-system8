@@ -35,3 +35,5 @@ As funcionalidades básicas são:
 Link para o Deploy:
     https://sistema-labenu.onrender.com
 
+Link da documentação:
+https://documenter.getpostman.com/view/22367197/2s8Z75RUYZ
