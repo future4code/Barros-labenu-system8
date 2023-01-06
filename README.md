@@ -31,3 +31,7 @@ As funcionalidades básicas são:
 → Adicionar docente na turma;
 
 → Pegar a idade de algum estudante a partir do id
+
+Link para o Deploy:
+    https://sistema-labenu.onrender.com
+
