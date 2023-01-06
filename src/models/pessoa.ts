@@ -1,10 +1,10 @@
 export class Pessoa{
     constructor(
-        protected id: string,
-        protected nome: string,
-        protected email:string,
-        protected data_nasc:string,
-        protected turma_id:string
+        public id: string,
+        public nome: string,
+        public email:string,
+        public data_nasc:string,
+        public turma_id:string
     ){
         this.id = id,
         this.nome = nome,
