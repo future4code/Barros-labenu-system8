@@ -6,6 +6,7 @@ import { getAllClasses } from "./endpoints/getAllClasses"
 import { createNewStudent } from "./endpoints/createNewStudent"
 import { getAllStudents } from "./endpoints/getAllStudents"
 import { createNewTeacher } from "./endpoints/createNewTeacher"
+import { getAllTeachers } from "./endpoints/getAllTeachers"
 
 const app = express()
 
@@ -29,6 +30,8 @@ app.post("/turma", createClass)
 app.put("/turma", updateModule)
 
 app.post("/estudante", createNewStudent)
+
+app.get("/docente", getAllTeachers)
 
 app.post("/docente", createNewTeacher)
 

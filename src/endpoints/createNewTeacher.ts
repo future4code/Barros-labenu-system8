@@ -7,6 +7,7 @@ import { Docente } from "../models/docente";
 
 export const createNewTeacher = async (req:Request, res:Response) => {
     let errorCode = 400
+    let relation = new Rel_Especialidades()
     const { nome, email, data_nasc, turma_id, especialidades } = req.body
     const teacherClass = new Docente(generateId(30), nome, email, data_nasc, turma_id, especialidades)
     console.log(teacherClass.especialidades);
@@ -30,7 +31,7 @@ export const createNewTeacher = async (req:Request, res:Response) => {
         let especialidadesTable = new EspecialidadesDatabase()
         let relation = new Rel_Especialidades()
         for (let index = 0; index < teacherClass.especialidades.length; index++) {
-            const element = teacherClass.especialidades[index];
+            const element = teacherClass.especialidades[index];         
             let idEspecialidades = generateId(30)
             await especialidadesTable.create({
                 id:idEspecialidades,
@@ -46,7 +47,6 @@ export const createNewTeacher = async (req:Request, res:Response) => {
                 const comparing = getAllSpecialty[index];
                 console.log(currSpecialty);
                 console.log(comparing.nome);
-                
                 if (currSpecialty === comparing.nome) {
                 await relation.create({
                     'id':generateId(30),

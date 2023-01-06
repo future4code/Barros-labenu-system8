@@ -28,8 +28,9 @@ export const getAllStudents = async (req:Request, res:Response) => {
         let hobbies = hobbiesFromStudent[0].map((item:any) => {
             return item.hobbies
         })
+        let newHobbies = hobbies.filter((a:any, i:any) => hobbies.indexOf(a) === i);
 
-        let result = ({...filteredStudent, hobbies})
+        let result = ({...filteredStudent, newHobbies})
 
         res.send(result)
     } catch (err:any) {
