@@ -4,7 +4,7 @@ import { createClass } from "./endpoints/createClass"
 import { updateModule } from "./endpoints/updateModule"
 import { getAllClasses } from "./endpoints/getAllClasses"
 import { createNewStudent } from "./endpoints/createNewStudent"
-import { getAllStudents } from "./endpoints/getAllStudents"
+import { getAllStudents } from "./endpoints/getStudentByName"
 import { createNewTeacher } from "./endpoints/createNewTeacher"
 import { getAllTeachers } from "./endpoints/getAllTeachers"
 
