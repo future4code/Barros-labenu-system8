@@ -50,8 +50,6 @@ export const getAllClasses = async (req:Request,res:Response) => {
     })
         const dataBase = new TurmaDatabase()
         let newClass
-        let noRepeatStudents = []
-        let noRepeatTeachers = []
         let finalResult = []
         let getStudentsByClass : any= []
         let getTeacherByClass:any = []
@@ -66,7 +64,7 @@ export const getAllClasses = async (req:Request,res:Response) => {
             let noRepeatStudents: any = getStudentsByClass.filter((a:any, i:any) => getStudentsByClass.indexOf(a) === i);
             
             getTeacherByClass = teacherNames.filter((item:any) => {
-                return item.turma_id.toLowerCase() === element.id.toLowerCase()
+                return item.turma_id === element.id
             }).map((item:any) => {
                 return item.nome
             })
@@ -78,7 +76,7 @@ export const getAllClasses = async (req:Request,res:Response) => {
             
             finalResult.push(newClass)
         }
-        res.status(200).send({ finalResult })
+        res.status(200).send({ Turmas: finalResult })
     } catch (error:any) {
         res.send(error.message)
     }
